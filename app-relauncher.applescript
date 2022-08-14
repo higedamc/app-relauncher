@@ -13,14 +13,14 @@ on idle
 	doit4()
 	doit5()
 	
-	return 60 -- 1??????
+	return 60 -- checking process every 60 seconds
 end idle
 
 on doit()
 	tell application "System Events"
-		-- Bundle Identifier???????
+		-- set a variable for the bundle identifier of app
 		set pockApp to every application process whose bundle identifier is "Pock"
-		-- ????????????????????????????
+		-- set a conditional branch
 		if (count of pockApp) is 0 then
 			tell application "Finder"
 				launch application "Pock"
