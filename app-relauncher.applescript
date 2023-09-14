@@ -1,26 +1,26 @@
 on run
 	doit()
-    doit2()
+	doit2()
 	doit3()
 	doit4()
-	doit5()
+	-- doit5()
+	doit6()
 end run
 
 on idle
 	doit()
-    doit2()
+	doit2()
 	doit3()
 	doit4()
-	doit5()
+	-- doit5()
+	doit6()
 	
-	return 60 -- checking process every 60 seconds
+	return 60 -- in seconds
 end idle
 
 on doit()
 	tell application "System Events"
-		-- set a variable for the bundle identifier of app
 		set pockApp to every application process whose bundle identifier is "Pock"
-		-- set a conditional branch
 		if (count of pockApp) is 0 then
 			tell application "Finder"
 				launch application "Pock"
@@ -73,13 +73,24 @@ on doit4()
 	end tell
 end doit4
 
-on doit5()
+-- on doit5()
+-- 	tell application "System Events"
+-- 		set vanillaApp to every application process whose bundle identifier is "Vanilla"
+-- 		if (count of vanillaApp) is 0 then
+-- 			tell application "Finder"
+-- 				launch application "Vanilla"
+-- 			end tell
+-- 		end if
+-- 	end tell
+-- end doit5
+
+on doit6()
 	tell application "System Events"
-		set vanillaApp to every application process whose bundle identifier is "Vanilla"
+		set vanillaApp to every application process whose bundle identifier is "Tubist"
 		if (count of vanillaApp) is 0 then
 			tell application "Finder"
-				launch application "Vanilla"
+				launch application "Tubist"
 			end tell
 		end if
 	end tell
-end doit5
+end doit6
